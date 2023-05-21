@@ -8,10 +8,8 @@ const Upload = () => {
       var fileReader = new FileReader();
       fileReader.onload = function (e) {
         var srcData = e.target.result;
-        console.log(srcData);
         var newImage = document.createElement("img");
         newImage.src = srcData;
-        console.log(newImage.outerHTML);
         document.querySelector(".container-img").append(newImage);
       };
       fileReader.readAsDataURL(fileToLoad);
@@ -19,18 +17,14 @@ const Upload = () => {
   };
 
   const handleUpImgMulti = () => {
-    console.log("do do");
     var fileChoose = document.getElementById("imageFileMul").files;
-    console.log(fileChoose);
     for (var i = 0; i < fileChoose.length; i++) {
       var fileToLoad = fileChoose[i];
       var fileReader = new FileReader();
       fileReader.onload = function (e) {
         var srcData = e.target.result;
-        console.log(srcData);
         var newImage = document.createElement("img");
         newImage.src = srcData;
-        console.log(newImage.outerHTML);
         document.querySelector(".container-imgMulti").append(newImage);
       };
       fileReader.readAsDataURL(fileToLoad);
